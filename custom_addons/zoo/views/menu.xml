@@ -17,4 +17,12 @@
         sequence="1"
     />
 
+    <menuitem
+        id="menu_living_zone"
+        name="Living Zone"
+        parent="menu_zoo_root"
+        action="action_living_zone"
+        sequence="2"
+    />
+
 </odoo>
