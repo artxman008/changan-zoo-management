@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Root Menu -->
+    <menuitem
+        id="menu_zoo_root"
+        name="Zoo Management"
+        sequence="10"
+    />
+
+    <!-- Zoo Keeper Menu -->
+    <menuitem
+        id="menu_zoo_keeper"
+        name="Zoo Keeper"
+        parent="menu_zoo_root"
+        action="action_zoo_keeper"
+        sequence="1"
+    />
+
+</odoo>

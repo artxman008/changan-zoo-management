@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_zoo_keeper_tree" model="ir.ui.view">
+        <field name="name">zoo.keeper.tree</field>
+        <field name="model">zoo.keeper</field>
+
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="position"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_zoo_keeper_form" model="ir.ui.view">
+        <field name="name">zoo.keeper.form</field>
+        <field name="model">zoo.keeper</field>
+
+        <field name="arch" type="xml">
+            <form string="Zoo Keeper">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="position"/>
+                            <field name="age"/>
+                        </group>
+
+                        <group>
+                            <field name="salary"/>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Action -->
+    <record id="action_zoo_keeper" model="ir.actions.act_window">
+        <field name="name">Zoo Keepers</field>
+        <field name="res_model">zoo.keeper</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
