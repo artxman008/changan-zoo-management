@@ -25,3 +25,9 @@ class ZooKeeper(models.Model):
     image = fields.Binary(
         string="Photo"
     )
+
+    zone_ids = fields.One2many(
+    "zoo.living.zone",
+    "keeper_id",
+    string="Living Zones"
+    )
