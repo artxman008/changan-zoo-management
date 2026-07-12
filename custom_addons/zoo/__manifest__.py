@@ -13,6 +13,7 @@
         "security/ir.model.access.csv",
         "views/keeper_views.xml",
         "views/living_zone_views.xml",
+        "views/animal_views.xml",
         "views/menu.xml",
     ],
     "installable": True,

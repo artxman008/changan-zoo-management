@@ -25,4 +25,12 @@
         sequence="2"
     />
 
+    <menuitem
+        id="menu_animal"
+        name="Animals"
+        parent="menu_zoo_root"
+        action="action_animal"
+        sequence="3"
+    />
+
 </odoo>

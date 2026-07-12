@@ -35,6 +35,17 @@
                             <field name="image" widget="image"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Living Zones">
+                            <field name="zone_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="capacity"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
