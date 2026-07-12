@@ -32,7 +32,7 @@
 
                         <group>
                             <field name="salary"/>
-                            <field name="image" widget="image"/>
+                            <field name="image_1920" widget="image"/>
                         </group>
                     </group>
                     <notebook>

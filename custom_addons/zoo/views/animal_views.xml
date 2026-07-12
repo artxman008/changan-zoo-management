@@ -45,11 +45,72 @@
 
     </record>
 
+    <!-- Search View -->
+    <record id="view_animal_search" model="ir.ui.view">
+        <field name="name">zoo.animal.search</field>
+        <field name="model">zoo.animal</field>
+
+        <field name="arch" type="xml">
+            <search string="Search Animals">
+
+                <!-- Search Fields -->
+                <field name="name"/>
+                <field name="species"/>
+                <field name="zone_id"/>
+
+                <separator/>
+
+                <!-- Quick Filters -->
+                <filter
+                    name="filter_male"
+                    string="Male"
+                    domain="[('gender', '=', 'male')]"
+                />
+
+                <filter
+                    name="filter_female"
+                    string="Female"
+                    domain="[('gender', '=', 'female')]"
+                />
+
+                <filter
+                    name="filter_heavy"
+                    string="Heavy Animals"
+                    domain="[('weight', '>=', 100)]"
+                />
+
+                <separator/>
+
+                <!-- Group By -->
+                <group
+                    expand="0"
+                    string="Group By"
+                >
+
+                    <filter
+                        name="group_by_zone"
+                        string="Living Zone"
+                        context="{'group_by': 'zone_id'}"
+                    />
+
+                    <filter
+                        name="group_by_species"
+                        string="Species"
+                        context="{'group_by': 'species'}"
+                    />
+
+                </group>
+
+            </search>
+        </field>
+    </record>
+
     <!-- Action -->
     <record id="action_animal" model="ir.actions.act_window">
         <field name="name">Animals</field>
         <field name="res_model">zoo.animal</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_animal_search"/>
     </record>
 
 </odoo>
