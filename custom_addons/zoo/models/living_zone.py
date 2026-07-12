@@ -14,3 +14,9 @@ class LivingZone(models.Model):
         "zoo.keeper",
         string="Keeper"
     )
+
+    animal_ids = fields.One2many(
+    "zoo.animal",
+    "zone_id",
+    string="Animals"
+    )

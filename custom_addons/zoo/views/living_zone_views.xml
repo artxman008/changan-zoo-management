@@ -41,6 +41,19 @@
                     </group>
 
                 </sheet>
+
+                <notebook>
+                    <page string="Animals">
+                        <field name="animal_ids">
+                            <tree editable="bottom">
+                                <field name="name"/>
+                                <field name="species"/>
+                                <field name="gender"/>
+                                <field name="weight"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>
