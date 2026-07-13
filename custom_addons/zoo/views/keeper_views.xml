@@ -28,6 +28,8 @@
                             <field name="name"/>
                             <field name="position"/>
                             <field name="age"/>
+                            <field name="zone_count"/>
+                            <field name="animal_count"/>
                         </group>
 
                         <group>
@@ -47,6 +49,33 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button
+                        name="action_view_zones"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-map-marker"
+                    >
+                        <field
+                            name="zone_count"
+                            widget="statinfo"
+                            string="Living Zones"
+                        />
+                    </button>
+
+                    <button
+                        name="action_view_animals"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-paw"
+                    >
+                        <field
+                            name="animal_count"
+                            widget="statinfo"
+                            string="Animals"
+                        />
+                    </button>
+                </div>
             </form>
         </field>
     </record>

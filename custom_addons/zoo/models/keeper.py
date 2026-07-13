@@ -70,7 +70,7 @@ class ZooKeeper(models.Model):
 
     @api.depends(
         "zone_ids",
-        "zone_ids.animal_ids",
+        "zone_ids.animal_count",
     )
     def _compute_counts(self):
         """Compute the number of zones and animals assigned to each keeper."""
@@ -78,6 +78,29 @@ class ZooKeeper(models.Model):
             zones = keeper.zone_ids
             keeper.zone_count = len(zones)
             keeper.animal_count = sum(
-                len(zone.animal_ids)
+                len(zone.animal_count)
                 for zone in zones
             )
+    def action_view_zones(self):
+        self.ensure_one()
+
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "zoo.action_living_zone"
+        )
+        action["domain"] = [("keeper_id", "=", self.id)]
+        action["context"] = dict(
+            self.env.context,
+            default_keeper_id=self.id,
+        )
+        return action
+
+    def action_view_animals(self):
+        self.ensure_one()
+
+        action = self.env["ir.actions.actions"]._for_xml_id(
+            "zoo.action_animal"
+        )
+        action["domain"] = [
+            ("zone_id.keeper_id", "=", self.id),
+        ]
+        return action
